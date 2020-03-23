@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Handy Man Tracking System</h1>
+        <p class="lead">If the girls don't find you handsome. At least they will find you handy.</p>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="{% static "images/handy.jpg" %}" width="220" alt="handy"/>
+                                <div class="caption">
+                                    <h2>Track</h2>
+                                    <p>Log a workout.</p>
+                                    <p><a class="btn btn-primary" href="#" role="button">Click</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="{% static "images/handy.jpg" %}" width="220" alt="handy"/>
+                                <div class="caption">
+                                    <h2>My Training</h2>
+                                    <p>Read my training diary.</p>
+                                    <p><a class="btn btn-primary" href="#" role="button">Click</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="{% static "images/handy.jpg" %}" width="220" alt="handy"/>
+                                <div class="caption">
+                                    <h2>My Team</h2>
+                                    <p>See who is on your team.</p>
+                                    <p><a class="btn btn-primary" href="#" role="button">Click</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
