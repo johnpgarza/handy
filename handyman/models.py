@@ -6,6 +6,7 @@ from .forms import SPECIALTY
 
 class HandyMan(models.Model):
     date_joined = models.DateTimeField(auto_now_add=True)
+    username = models.CharField(max_length=26, unique=True)
     first_name = models.CharField(max_length=26, help_text="First Name")
     last_name = models.CharField(max_length=26, help_text="Last Name")
     mi = models.CharField(max_length=1, help_text="One Character")
@@ -20,3 +21,6 @@ class HandyMan(models.Model):
     class Meta:
         verbose_name = 'My Work Force'
         verbose_name_plural = 'My Work Force'
+
+    def __str__(self):
+        return self.username

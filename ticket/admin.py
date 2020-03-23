@@ -33,14 +33,14 @@ export_to_csv.short_description = 'Export to CSV'
 
 class TicketAdmin(admin.ModelAdmin):
     model = Ticket
-    list_display = ['day', 'location', 'type', 'ticket_open']
+    list_display = ['ticket_number', 'day', 'location', 'type', 'ticket_open', 'assigned_employee']
     list_filter = ['ticket_open', 'location']
     actions = [export_to_csv]
 
 
 class TicketStatusAdmin(admin.ModelAdmin):
     model = TicketStatus
-    list_display = ['day', 'status']
+    list_display = ['ticket', 'day', 'status']
     list_filter = ['status']
     actions = [export_to_csv]
 
