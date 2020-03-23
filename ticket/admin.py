@@ -40,7 +40,7 @@ class TicketAdmin(admin.ModelAdmin):
 
 class TicketStatusAdmin(admin.ModelAdmin):
     model = TicketStatus
-    list_display = ['ticket', 'day', 'status']
+    list_display = ['day', 'status']
     list_filter = ['status']
     actions = [export_to_csv]
 

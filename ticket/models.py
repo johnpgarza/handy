@@ -9,6 +9,10 @@ class Ticket(models.Model):
     problem = models.TextField(max_length=255)
     ticket_open = models.BooleanField(default=True)
 
+    class Meta:
+        verbose_name = 'My Ticket'
+        verbose_name_plural = 'My Tickets'
+
 
 class TicketStatus(models.Model):
     day = models.DateTimeField(auto_now_add=True)
@@ -17,3 +21,7 @@ class TicketStatus(models.Model):
     )
     status = models.CharField(choices=STATUS, max_length=26, default="Queue")
     reason = models.TextField(max_length=255, default="Ticket Created")
+
+    class Meta:
+        verbose_name = 'My Ticket Status'
+        verbose_name_plural = 'My Tickets Status'

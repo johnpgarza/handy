@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'handyman.apps.HandymanConfig',
     'ticket',
+    'phone_field',
 ]
 
 MIDDLEWARE = [
