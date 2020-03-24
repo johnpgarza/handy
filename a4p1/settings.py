@@ -129,6 +129,11 @@ STATICFILES_DIRS = [
     '/a4p1/static/',
 ]
 
+# Login Logout Redirect path
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
 # BootStrap Settings
 BOOTSTRAP4 = {
 

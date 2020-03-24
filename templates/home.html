@@ -3,10 +3,6 @@
 {% block title %}Home{% endblock title %}
 {% block content %}
     {% if user.is_authenticated %}
-        <div class="alert alert-secondary" role="alert">
-            <p>Hello {{ user.username }}</p>
-        </div>
-
         <div class="jumbotron">
             <h1 class="display-4">Handy Man Tracking System</h1>
             <p class="lead">If the girls don't find you handsome. At least they will find you handy.</p>
