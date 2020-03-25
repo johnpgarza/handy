@@ -15,8 +15,7 @@
     <a class="navbar-brand" href="{% url 'home' %}">Handy Tracker.</a>
     {% if user.is_authenticated %}
         <ul class="navbar-nav mr-auto text-light ">
-            <p>Hello {{ user.username }}
-            <p>
+            Hello {{ user.first_name }} your last login was {{ user.last_login }}
         </ul>
     {% endif %}
     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -46,7 +45,7 @@
             <form class="form-inline ml-auto">
                 <a href="{% url 'login' %}" class="btn btn-outline-secondary">
                     Log In</a>
-                <a href="{% url 'home' %}" class="btn btn-primary ml-2">
+                <a href="{% url 'register' %}" class="btn btn-primary ml-2">
                     Sign up</a>
             </form>
         {% endif %}
