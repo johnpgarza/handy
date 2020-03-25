@@ -132,7 +132,6 @@ STATICFILES_DIRS = [
 # Login Logout Redirect path
 
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
 
 # BootStrap Settings
 BOOTSTRAP4 = {
