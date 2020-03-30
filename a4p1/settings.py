@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'AMERICA/Chicago'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
@@ -132,6 +132,11 @@ STATICFILES_DIRS = [
 # Login Logout Redirect path
 
 LOGIN_REDIRECT_URL = 'home'
+
+# Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
 
 # BootStrap Settings
 BOOTSTRAP4 = {

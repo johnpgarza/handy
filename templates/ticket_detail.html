@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Tickets{% endblock title %}
+{% block content %}
+    <h1>Ticket Details</h1>
+    {% for ticket in tickets %}
+        <div class="jumbotron">
+            <h5 class="card-img-top">Ticket Number: {{ ticket.ticket_number }}</h5>
+            <div class="card-body">
+                <p class="card-text">Created: {{ ticket.day }}</p>
+                <p class="card-text">Location: {{ ticket.location }}</p>
+                <p class="card-text">Type: {{ ticket.type}}</p>
+                <p class="card-text">Ticket Details: {{ ticket.problem }}</p>
+                <p class="card-text">Assigned to: {{ ticket.assigned_employee }}</p>
+                <a href="{% url 'ticket_status' pk=ticket.pk %}" class="btn btn-primary">Check Status</a>
+            </div>
+        </div>
+                </br>
+                </br>
+    {% endfor %}
+{% endblock content %}

@@ -1,6 +1,7 @@
-from django.core.validators import MaxValueValidator
 from django.db import models
-from .forms import LOCATION, TYPE, STATUS
+from django.urls import reverse
+
+from .utils import LOCATION, TYPE, STATUS
 from handyman.models import HandyMan
 
 
@@ -20,7 +21,7 @@ class Ticket(models.Model):
         verbose_name_plural = 'My Tickets'
 
     def __str__(self):
-        return str(self.ticket_number)
+        return str(self.pk)
 
 
 class TicketStatus(models.Model):
@@ -34,3 +35,6 @@ class TicketStatus(models.Model):
     class Meta:
         verbose_name = 'My Ticket Status'
         verbose_name_plural = 'My Tickets Status'
+
+    def __str__(self):
+        return str(self.pk)

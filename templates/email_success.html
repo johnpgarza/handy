@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="jumbotron">
+            <h1 class="display-4">Handy Man Tracking System</h1>
+            <p class="lead">If the girls don't find you handsome. At least they will find you handy.</p>
+
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="jumbotron">
+            <h1 class="display-4">Thank you for your input.</h1>
+            <hr class="my-4">
+            <p class="lead">Your email was successfully sent.</p>
+        </div>
+    {% endif %}
+{% endblock content %}

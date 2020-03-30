@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Ticket Status{% endblock title %}
+{% block content %}
+    <h1>Ticket Status</h1>
+    <a href="{% url 'status_new' %}" class="btn btn-success ml-2">Update Status</a>
+    {% for status in tickets %}
+        <div class="jumbotron">
+            <h5 class="card-img-top">Ticket Status: {{ status.status}}</h5>
+            <div class="card-body">
+                <p class="card-text">Last Updated: {{ status.day }}</p>
+                <p class="card-text">Reason: {{ status.reason }}</p>
+            </div>
+        </div>
+                </br>
+                </br>
+    {% endfor %}
+{% endblock content %}

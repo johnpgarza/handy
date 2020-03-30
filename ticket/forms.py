@@ -1,30 +1,23 @@
-# Form Choices
-LOCATION = (
-    ("Interior", "Interior"),
-    ("Exterior", "Exterior")
-)
+from django import forms
+from .models import Ticket, TicketStatus
 
-TYPE = (
-    ("Plumbing", "Plumbing"),
-    ("Electrical", "Electrical"),
-    ("Heating", "Heating"),
-    ("Air Conditioning", "Air Conditioning"),
-    ("Flooring", "Flooring"),
-    ("Cabinets", "Cabinets"),
-    ("Door", "Door"),
-    ("Roof", "Roof"),
-    ("Siding", "Siding"),
-    ("Windows", "Windows"),
-    ("Cement", "Cement"),
-    ("Gutters", "Gutters"),
-    ("Other", "Other"),
-)
 
-STATUS = (
-    ("Queue", "Queue"),
-    ("Assigned", "Assigned"),
-    ("In Progress", "In Progress"),
-    ("Awaiting", "Awaiting"),
-    ("Completed", "Completed"),
-    ("Closed", "Closed"),
-)
+class TicketForm(forms.ModelForm):
+    class Meta:
+        model = Ticket
+        fields = ('location', 'type', 'problem',)
+
+
+class NewStatusForm(forms.ModelForm):
+    class Meta:
+        model = TicketStatus
+        fields = ('ticket', 'status', 'reason')
+
+
+class AssignmentUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Ticket
+        fields = ['assigned_employee', 'location', 'type', 'problem']
+    location = forms.CharField(widget=forms.TextInput(attrs={'readonly': 'readonly'}))
+    type = forms.CharField(widget=forms.TextInput(attrs={'readonly': 'readonly'}))
+    problem = forms.CharField(widget=forms.TextInput(attrs={'readonly': 'readonly'}))

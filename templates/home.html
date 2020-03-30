@@ -16,8 +16,8 @@
                                     <img src="{% static "images/handy.jpg" %}" width="220" alt="handy"/>
                                     <div class="caption">
                                         <h2>Track</h2>
-                                        <p>Log a workout.</p>
-                                        <p><a class="btn btn-primary" href="#" role="button">Click</a>
+                                        <p>List All Tickets</p>
+                                        <p><a class="btn btn-primary" href="{% url "ticket_list" %}" role="button">Click</a>
                                         </p>
                                     </div>
                                 </div>
@@ -26,9 +26,9 @@
                                 <div class="thumbnail">
                                     <img src="{% static "images/handy.jpg" %}" width="220" alt="handy"/>
                                     <div class="caption">
-                                        <h2>My Training</h2>
-                                        <p>Read my training diary.</p>
-                                        <p><a class="btn btn-primary" href="#" role="button">Click</a></p>
+                                        <h2>New Ticket</h2>
+                                        <p>Create a Ticket</p>
+                                        <p><a class="btn btn-primary" href="{% url 'ticket_new' %}" role="button">Click</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -36,9 +36,9 @@
                                 <div class="thumbnail">
                                     <img src="{% static "images/handy.jpg" %}" width="220" alt="handy"/>
                                     <div class="caption">
-                                        <h2>My Team</h2>
-                                        <p>See who is on your team.</p>
-                                        <p><a class="btn btn-primary" href="#" role="button">Click</a></p>
+                                        <h2>Open Tickets</h2>
+                                        <p>List only the open tickets</p>
+                                        <p><a class="btn btn-primary" href="{% url 'open_tickets' %}" role="button">Click</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
             <p class="lead">This is a simple home improvement tracking system.</p>
             <hr class="my-4">
             <p>You can sign up as a handy person, or as a customer.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'email' %}" role="button">Contact Us</a>
         </div>
     {% endif %}
 {% endblock content %}

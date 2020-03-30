@@ -1,7 +1,8 @@
+from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login
-from .forms import LoginForm, UserRegistrationForm
+from .forms import LoginForm, UserRegistrationForm, EmailForm
 
 
 def user_login(request):
@@ -38,3 +39,24 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, '../templates/registration/register.html', {'user_form': user_form})
+
+
+def email_form(request):
+    if request.method == 'GET':
+        form = EmailForm()
+    else:
+        form = EmailForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            from_email = form.cleaned_data['from_email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(subject, message, from_email, ['handyman@email.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('success')
+    return render(request, "../templates/email_form.html", {'form': form})
+
+
+def successView(request):
+    return HttpResponse('Success! Thank you for your message.')

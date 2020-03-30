@@ -22,6 +22,12 @@ class UserRegistrationForm(forms.ModelForm):
         return cd['password2']
 
 
+class EmailForm(forms.Form):
+    from_email = forms.EmailField(required=True)
+    subject = forms.CharField(required=True)
+    message = forms.CharField(widget=forms.Textarea, required=True)
+
+
 SPECIALTY = (
     ("General", "General"),
     ("Electrician", "Electrician"),
