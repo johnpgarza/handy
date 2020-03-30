@@ -83,6 +83,7 @@ WSGI_APPLICATION = 'a4p1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        'CONN_MAX_AGE': 500,
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
@@ -137,7 +138,7 @@ STATICFILES_DIRS = [
 ]
 
 # Update database configuration with $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
+db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 DATABASES['default'] = dj_database_url.config()
 
