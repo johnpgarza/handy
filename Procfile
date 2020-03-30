@@ -1,1 +1,1 @@
-web: gunicorn a4p1.wsgi --timeout 100
+web: gunicorn a4p1.wsgi --timeout 10
