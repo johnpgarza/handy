@@ -1,1 +1,1 @@
-web: gunicorn a4p1.wsgi --log-file
+web: gunicorn a4p1.wsgi
